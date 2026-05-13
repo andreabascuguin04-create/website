@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Voices Unfiltered</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:Arial;
+background-image:url('sunset.jpg');
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+color:black;
+}
+
+/* DARK OVERLAY */
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.25);
+z-index:-1;
+}
+
+/* NAVIGATION (MOVED TO RIGHT) */
+#navigation{
+display:flex;
+justify-content:flex-end;
+gap:25px;
+align-items:center;
+
+background-color:rgba(80,40,20,0.75);
+padding:18px;
+
+position:sticky;
+top:0;
+z-index:999;
+}
+
+#navigation a{
+text-decoration:none;
+color:white;
+font-size:18px;
+transition:0.3s;
+}
+
+#navigation a:hover{
+color:gold;
+}
+
+/* SECTION STYLE */
+section{
+padding:35px;
+}
+
+/* MAIN CONTAINER */
+.container{
+background:rgba(255,255,255,0.30);
+padding:35px;
+border-radius:25px;
+box-shadow:0px 4px 15px rgba(0,0,0,0.35);
+backdrop-filter:blur(2px);
+}
+
+/* HOME */
+#home h1{
+text-align:center;
+font-size:55px;
+color:brown;
+letter-spacing:3px;
+}
+
+.cardcontainer{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:25px;
+margin-top:40px;
+}
+
+.card{
+background:rgba(255,255,255,0.25);
+width:240px;
+padding:20px;
+border-radius:15px;
+text-align:center;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0px 4px 10px gray;
+}
+
+/* ABOUT */
+.authorcontainer{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:25px;
+margin-top:35px;
+}
+
+.authorcard{
+background:rgba(255,255,255,0.25);
+padding:20px;
+width:250px;
+border-radius:15px;
+text-align:center;
+box-shadow:0px 4px 10px rgba(0,0,0,0.2);
+transition:0.3s;
+}
+
+.authorcard:hover{
+transform:scale(1.05);
+}
+
+.authorcard img{
+width:140px;
+height:140px;
+border-radius:50%;
+object-fit:cover;
+}
+
+/* PODCAST */
+video{
+width:85%;
+max-width:850px;
+border-radius:20px;
+box-shadow:0px 4px 10px gray;
+margin-top:30px;
+}
+
+/* REFLECTION */
+.reflectionbox{
+background:rgba(255,255,255,0.25);
+padding:25px;
+border-radius:15px;
+margin-top:25px;
+transition:0.3s;
+}
+
+.reflectionbox:hover{
+transform:translateX(10px);
+}
+
+.lessonbutton{
+display:inline-block;
+margin-top:20px;
+padding:12px 25px;
+background:brown;
+color:white;
+text-decoration:none;
+border-radius:10px;
+font-size:17px;
+transition:0.3s;
+}
+
+.lessonbutton:hover{
+background:darkgoldenrod;
+}
+
+/* LESSON PAGES */
+.lessonimage{
+width:100%;
+max-width:850px;
+display:block;
+margin:auto;
+border-radius:20px;
+margin-top:25px;
+box-shadow:0px 4px 10px gray;
+}
+
+.backbutton{
+padding:15px 30px;
+border:none;
+color:white;
+border-radius:10px;
+font-size:18px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.backbutton:hover{
+opacity:0.8;
+}
+
+/* FOOTER */
+footer{
+background:rgba(0,0,0,0.70);
+color:white;
+text-align:center;
+padding:20px;
+margin-top:30px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION-->
+<div id="navigation">
+
+<a href="#" onclick="show('home')"><u>Home</u></a>
+<a href="#" onclick="show('about')"><u>About Us</u></a>
+<a href="#" onclick="show('podcast')"><u>Podcast</u></a>
+<a href="#" onclick="show('reflection')"><u>Reflection Corner</u></a>
+
+</div>
+
+<!-- HOME -->
+<section id="home" style="display:block;">
+
+<div class="container">
+<div style="text-align:center; margin-top:35px;">
+<img src="Logo.png" style="width:50%; max-width:300px; border-radius:20px; box-shadow:0px 4px 10px gray;">
+</div>
+
+<h1>VOICES UNFILTERED</h1>
+
+<p style="text-align:center; font-size:22px; margin-top:10px; color:#333;">
+From Experience To Understanding
+</p>
+
+
+<p style="text-align:center; max-width:850px; margin:auto; margin-top:35px; line-height:2; font-size:18px;">
+Welcome to Voices Unfiltered where stories, experiences, and conversations become meaningful life lessons.
+</p>
+
+<div class="cardcontainer">
+<div class="card">
+<h3 style="color:brown;">Meaningful Stories</h3>
+<p style="margin-top:10px;">Real-life experiences that inspire hope and resilience.</p>
+</div>
+
+<div class="card">
+<h3 style="color:darkgreen;">Real Conversations</h3>
+<p style="margin-top:10px;">Podcast episodes about struggles, growth, and hope.</p>
+</div>
+
+<div class="card">
+<h3 style="color:darkgoldenrod;">Life Reflections</h3>
+<p style="margin-top:10px;">Thoughts and realizations that help us grow.</p>
+</div>
+
+</div>
+
+<p style="text-align:center; max-width:850px; margin:auto; margin-top:35px; line-height:2; font-size:18px;">
+Life is full of experiences that shape who we are and how we see the world. Every success, failure, mistake, and achievement carries a lesson that helps us grow into better individuals. These “life lessons” are the wisdom we gain from real situations—often learned through challenges, decisions, and personal experiences.</p>
+
+<p style="text-align:center; max-width:850px; margin:auto; margin-top:35px; line-height:2; font-size:18px;">The idea of life lessons reminds us that nothing happens without purpose. Even difficult moments can teach us patience, strength, understanding, and resilience. By reflecting on these experiences, we learn how to improve ourselves, make better choices, and treat others with kindness and respect.</p>
+
+<p style="text-align:center; max-width:850px; margin:auto; margin-top:35px; line-height:2; font-size:18px;">This is what makes life lessons important—they guide us, inspire us, and help us become more aware of ourselves and the world around us.</p>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" style="display:none;">
+
+<div class="container">
+
+<h1 style="text-align:center; color:brown; font-size:50px;">About Us</h1>
+
+<p style="line-height:2; font-size:18px; margin-top:25px; text-indent:40px;">
+Voices Unfiltered is a storytelling and podcast-inspired platform created to inspire people through meaningful stories and real-life lessons. It serves as a space where readers can explore carefully written experiences, reflections, and insights that encourage personal growth and deeper understanding of life.
+</p>
+<p style="line-height:2; font-size:18px; margin-top:25px; text-indent:40px;">The platform is created and curated by a team of authors who are passionate about storytelling and personal development.</p>
+
+<div style="display:flex; justify-content:center; flex-wrap:wrap; gap:25px; margin-top:35px;">
+
+<div class="authorcard">
+<img src="Andrea.jpg">
+<h3 style="margin-top:15px;">Andrea P. Bascuguin</h3>
+<p style="margin-top:10px;">February 4, 2006</p>
+</div>
+
+<div class="authorcard">
+<img src="Jourene.jpg">
+<h3 style="margin-top:15px;">Jourene Lynsae Angelei C. Carlit</h3>
+<p style="margin-top:10px;">October 30, 2006</p>
+</div>
+
+<div class="authorcard">
+<img src="Tiffany.jpg">
+<h3 style="margin-top:15px;">Tiffany G. Rivera</h3>
+<p style="margin-top:10px;">May 26, 2006</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PODCAST -->
+<section id="podcast" style="display:none;">
+
+<div class="container" style="text-align:center;">
+
+<h1 style="color:brown; font-size:50px;">Podcast Episode</h1>
+
+<p style="margin-top:25px; font-size:18px;">
+Listen to meaningful conversations and reflections!
+</p>
+
+<video controls style="width: 300px; max-width: 90%; height: auto;">
+<source src="podcast.mp4" type="video/mp4">
+</video>
+
+</div>
+
+</section>
+
+<!-- REFLECTION -->
+<section id="reflection" style="display:none;">
+
+<div class="container">
+
+<h1 style="text-align:center; color:brown; font-size:50px;">Reflection Corner</h1>
+
+<p style="text-align:center; margin-top:15px; font-size:18px; color:#333;">
+Thoughts, quotes, and lessons.
+</p>
+
+<div class="reflectionbox" style="border-left:10px solid brown;">
+<h2>“Letting Go Begins Where Holding On Ends.”</h2>
+<p>Healing starts when you choose yourself over what hurts you.</p>
+<a href="#" onclick="showLesson('lesson1')" class="lessonbutton">Read Full</a>
+</div>
+
+<div class="reflectionbox" style="border-left:10px solid darkgreen;">
+<h2>“Every Experience Teaches Something Valuable.”</h2>
+<p>Success and failure both teach lessons.</p>
+<a href="#" onclick="showLesson('lesson2')" class="lessonbutton">Read Full</a>
+</div>
+
+<div class="reflectionbox" style="border-left:10px solid darkgoldenrod;">
+<h2>“Kindness Creates Connection.”</h2>
+<p>Simple kindness changes lives.</p>
+<a href="#" onclick="showLesson('lesson3')" class="lessonbutton">Read Full</a>
+</div>
+
+<div class="reflectionbox" style="border-left:10px solid brown;">
+<h2>“Not Everything Lasts, But Everything Matters.”</h2>
+<p>Even endings carry meaning.</p>
+<a href="#" onclick="showLesson('lesson4')" class="lessonbutton">Read Full</a>
+</div>
+
+<div class="reflectionbox" style="border-left:10px solid darkgreen;">
+<h2>“When Names Turn Into Memories.”</h2>
+<p>Familiarity can fade, even when nothing is said.</p>
+<a href="#" onclick="showLesson('lesson5')" class="lessonbutton">Read Full</a>
+</div>
+
+<div class="reflectionbox" style="border-left:10px solid darkgoldenrod;">
+<h2>“Becoming Without Noise.”</h2>
+<p>Change often happens before you realize it has begun.</p>
+<a href="#" onclick="showLesson('lesson6')" class="lessonbutton">Read Full</a>
+</div>
+
+</div>
+
+</section>
+
+<!-- LESSONS -->
+<section id="lesson1" style="display:none;">
+<div class="container">
+<h1 style="text-align:center; color:brown;">Letting Go Begins Where Holding On Ends.</h1>
+<p style="margin-top:25px; line-height:2;">Sometimes, the hardest thing in life is not losing someone or something—but accepting that it is already over even when your heart is still not ready. You keep holding on to memories, replaying moments that once made you feel safe and happy, hoping that maybe things will still go back to how they used to be. But life has a quiet way of showing you that not everything is meant to stay.</p>
+<p style="margin-top:25px; line-height:2;">There are days when you feel like you are okay, and there are days when everything suddenly comes back. A song, a place, or even a small memory can bring back the weight you thought you already let go of. And in those moments, you start questioning yourself—why it still hurts, why you cannot move on faster, why letting go feels like losing a part of yourself. But healing does not happen on your own timeline. You do not need to rush yourself just to feel “okay” for others. Take your time. Feel the pain. Acknowledge it instead of hiding it. Because what you avoid will only stay longer inside you. It is okay to not be okay, especially when you are still learning how to accept something you never expected to lose. You will also realize that your mind will try to protect you by remembering only the good parts. You will start thinking about “what ifs” and “could have beens.” But not everything is meant to be replayed in your head. Sometimes, you need to remind yourself why things changed in the first place, even if it hurts, because clarity is what slowly brings peace.</p>
+<p style="margin-top:25px; line-height:2;">At some point, you also need to give yourself space. Distance is not a sign of bitterness—it is a form of self-respect. You cannot heal while constantly reopening the same emotional wounds. Peace starts when you stop going back to what keeps breaking you. Little by little, try to rebuild your days. Go back to the things that remind you who you are outside of that person or situation. Focus on small routines, talk to people who make you feel safe, and do things that help you breathe a little easier. You do not have to fix your whole life at once. You just need to start again, step by step. And even if there are setbacks, even if some days feel like you are back to zero, keep going. Healing is not straight—it is messy, slow, and unpredictable. But every time you choose to move forward, even in the smallest way, you are already growing.</p>
+<p style="margin-top:25px; line-height:2;">One day, you will look back and realize that what once hurt so much no longer has the same power over you. It will still be part of your story, but it will no longer define you. And in that moment, you will understand that letting go was not about losing—it was about learning how to finally be free.</p>
+
+<div style="text-align:center; margin-top:30px;">
+<button onclick="goBackToReflection()" class="backbutton" style="background:brown;"> Back</button>
+</div>
+</div>
+</section>
+
+<section id="lesson2" style="display:none;">
+<div class="container">
+<h1 style="text-align:center; color:darkgreen;">Every Experience Teaches Something Valuable.</h1>
+<p style="margin-top:25px; line-height:2;">Life does not always go the way we expect it to. There are moments when everything feels right—when you succeed, when things fall into place, when you feel proud of how far you have come. And there are also moments when everything falls apart, when you fail, when you lose something important, or when things do not go the way you planned. In both situations, life is still teaching you something, even if you do not realize it right away.</p>
+<p style="margin-top:25px; line-height:2;">Success often teaches you confidence, patience, and discipline. It shows you what you are capable of when you try and when you stay committed. But sometimes, success can also make you forget the effort behind it. That is why life does not only give success—it also allows failure to happen. Because in failure, you learn things that success cannot teach you.</p>
+<p style="margin-top:25px; line-height:2;">Failure teaches you humility. It teaches you how to accept mistakes, how to stand up again, and how to try even when you feel like giving up. It also teaches you self-awareness—the ability to see where you went wrong and how you can improve. Most importantly, failure teaches you resilience, the kind of strength that only comes when you have been broken and still chose to continue. There will be times when failure feels heavier than you can handle. You might start doubting yourself, thinking that you are not enough or that you are not capable. But in those moments, you need to remind yourself that failure is not the end of your story. It is only a part of your growth. You are not defined by your mistakes, but by how you choose to rise after them.</p>
+<p style="margin-top:25px; line-height:2;">One important thing you need to remember is this: do not rush your growth. Everyone has their own timing. Just because others seem ahead does not mean you are behind. You are simply on a different part of your journey. Comparison will only make you forget how far you have already come. Another thing to understand is that not every failure needs to be feared. Some failures are necessary. They redirect you, protect you from wrong paths, and push you toward something better that you may not see yet. What feels like a loss today may actually be a lesson guiding you to a better direction tomorrow. You also need to learn how to reflect, not just react. Instead of asking “Why did this happen to me?”, try asking “What is this teaching me?” This simple shift in thinking can change how you see both success and failure. It turns pain into understanding and confusion into clarity.</p>
+<p style="margin-top:25px; line-height:2;">In time, you will realize that every experience you go through—whether good or bad—is shaping you into someone stronger, wiser, and more prepared for life. Nothing is wasted. Even the moments that hurt you the most are building a version of you that you have not yet met. And when you finally look back, you will understand that life was never just about winning or losing. It was always about learning.</p>
+<div style="text-align:center; margin-top:30px;">
+<button onclick="goBackToReflection()" class="backbutton" style="background:darkgreen;"> Back</button>
+</div>
+</div>
+</section>
+
+<section id="lesson3" style="display:none;">
+<div class="container">
+<h1 style="text-align:center; color:darkgoldenrod;">Simple Kindness Changes Lives.</h1>
+<p style="margin-top:25px; line-height:2;">There are moments in life when people underestimate how far a simple act of kindness can go. A small smile, a gentle word, or even a quiet act of understanding can change the way someone feels without us even realizing it. In a world that often feels fast, harsh, and distant, kindness becomes something powerful—it reminds people that they are seen, valued, and not alone.</p>
+<p style="margin-top:25px; line-height:2;">Kindness is not always big or loud. Most of the time, it is found in the smallest actions. It is in the way you listen to someone without interrupting, the way you treat people even when they cannot offer you anything in return, and the way you choose to be gentle even when life has been unkind to you. These small actions may seem simple, but they carry a weight that can stay in someone’s heart for a long time. There will be times when being kind feels difficult. You may meet people who are rude, ungrateful, or distant. In those moments, it becomes easy to respond with the same energy. But one important lesson is this: you are not responsible for how others treat you, but you are responsible for how you respond. Choosing kindness, even when it is not returned, is a reflection of your character, not their behavior. One reflection you need to understand is that kindness is never wasted. Even if people do not show appreciation right away, your actions still matter. You never truly know what someone is going through. The person you treat with patience today might be silently struggling, and your kindness might be the only thing that makes their day a little lighter. Another important thing to remember is to be kind to yourself as well. Many people are good at showing kindness to others but forget to extend it inward. You cannot give what you do not have. If you constantly criticize yourself, push yourself too hard, or ignore your own needs, you will eventually feel empty. Treat yourself with the same patience and understanding you offer to others.</p>
+<p style="margin-top:25px; line-height:2;">Kindness also builds connection. It bridges gaps between strangers, strengthens relationships, and creates trust. People may forget what you said, but they often remember how you made them feel. A kind person leaves behind a feeling of safety and warmth that stays even after the moment has passed. In time, you will realize that kindness is not weakness—it is strength in its quietest form. It takes courage to be kind in a world that sometimes encourages the opposite. It takes maturity to choose understanding over judgment, and compassion over anger. And when you look back at your life, you will notice that the moments where you chose kindness—even when it was hard—are the moments that shaped not only others, but also who you became. Because in the end, kindness does not just change lives. It changes you too.</p>
+<div style="text-align:center; margin-top:30px;">
+<button onclick="goBackToReflection()" class="backbutton" style="background:darkgoldenrod;"> Back</button>
+</div>
+</div>
+</section>
+
+<section id="lesson4" style="display:none;">
+<div class="container">
+<h1 style="text-align:center; color:brown;">Not Everything Lasts, But Everything Matters.</h1>
+<p style="margin-top:25px; line-height:2;">There are moments in life that don’t stay long enough to become permanent, yet they leave marks that feel permanent anyway. People come and go, situations change without warning, and sometimes what you thought would last becomes something you can only look back on. It is strange how something can be temporary and still shape you deeply.</p>
+<p style="margin-top:25px; line-height:2;">At first, it is easy to focus on what was lost. You think about the version of life you had when things were still intact, when conversations were frequent, when everything felt certain. Loss has a way of making you believe that what ended was the only important part. But over time, you begin to notice something else—you did not just lose something; you also gained understanding. Not everything enters your life to stay. Some things arrive only to teach you how to feel, how to trust, how to let go. And even if their presence was brief, their impact can last much longer than their stay. That is where meaning lives—not in duration, but in depth. There is also a quiet kind of maturity in accepting that endings are not always failures. Sometimes they are simply proof that life moved in a direction you did not expect. And instead of forcing meaning out of what is gone, you begin to see meaning in what it left behind. </p>
+<p style="margin-top:25px; line-height:2;">You learn that memories do not demand permanence to be valuable. A moment can be gone and still matter. A person can no longer be present and still have shaped who you are. And even silence after connection does not erase what once existed between two people. In time, you stop asking why something did not last, and start understanding what it gave you while it did. And that shift changes everything. Because you realize that life was never only about holding on—it was also about learning how to carry things forward, even after they leave.</p>
+<div style="text-align:center; margin-top:30px;">
+<button onclick="goBackToReflection()" class="backbutton" style="background:brown;"> Back</button>
+</div>
+</div>
+</section>
+
+<section id="lesson5" style="display:none;">
+<div class="container">
+<h1 style="text-align:center; color:darkgreen;">When Names Turn Into Memories.</h1>
+<p style="margin-top:25px; line-height:2;">There are people who once felt like a constant in your life. The kind you never had to think twice about messaging, because conversation was already flowing before you even typed the first word. They knew your habits, your moods, the small details you never had to explain. At some point, they were not just part of your life—they felt like part of your everyday rhythm.</p>
+<p style="margin-top:25px; line-height:2;">And then, without anything dramatic happening, that rhythm slowly changes. At first, you don’t notice it as loss. You think they’re just busy, or you are. Life fills itself with other priorities, other people, other routines. The silence doesn’t feel like silence yet—it just feels like waiting. Waiting for a reply that used to come quickly. Waiting for a message that used to feel natural. Waiting for something that once never needed to be asked for. But slowly, waiting becomes the new normal. What makes it harder is not just the distance, but the memory of how effortless it used to be. You remember when talking didn’t require effort, when updates about your day felt important to someone, when laughter didn’t need planning or timing. And now, even simple conversations feel unfamiliar, like you are speaking to a version of each other that no longer exists in the present moment.</p>
+<p style="margin-top:25px; line-height:2;">There is a strange contradiction in this kind of loss. Nothing necessarily ends with conflict, nothing breaks loudly, yet something still disappears. And because there was no clear ending, your mind keeps searching for one—some reason, some moment, some explanation that would make it easier to understand why someone who once felt so close now feels so far. But not every distance has a single cause. Sometimes people drift not because they stopped caring, but because life quietly reorders them. Different schedules, different priorities, different versions of who you are becoming. Growth does not always move side by side. Sometimes it pulls people into directions that no longer meet at the same point. And that is where acceptance becomes difficult, because you are still holding onto a version of them that existed in a different chapter of your life. You are not just missing the person—they are also missing the version of connection that once felt easy.</p>
+<p style="margin-top:25px; line-height:2;">Eventually, you begin to understand that not all relationships are meant to remain unchanged. Some people are meant to stay, others are meant to pass through, and some are meant to exist in memory rather than presence. It does not make their role any less real. It only means their role was never meant to last in the same form forever. There is a quiet kind of peace that comes later, not when you forget them, but when you stop expecting them to be who they used to be in your present. When you can think of them without confusion, without waiting, without questions that no longer have answers. And in that realization, you learn something important: people don’t always become strangers because they change who they are, but because time changes where they belong in your life.</p>
+<div style="text-align:center; margin-top:30px;">
+<button onclick="goBackToReflection()" class="backbutton" style="background:darkgreen;"> Back</button>
+</div>
+</div>
+</section>
+
+<section id="lesson6" style="display:none;">
+<div class="container">
+<h1 style="text-align:center; color:darkgoldenrod;">Becoming Without Noise.</h1>
+<p style="margin-top:25px; line-height:2;">Not all growth arrives with certainty or celebration. It does not always feel like progress while it is happening. In fact, most of the time, it feels like nothing is changing at all. You continue your days the same way, facing the same routines, carrying the same thoughts, unaware that something inside you is slowly shifting.</p>
+<p style="margin-top:25px; line-height:2;">Then, without warning, you notice the difference. It appears in small moments that seem insignificant at first. Something that once upset you no longer affects you the same way. A situation that used to pull you into overthinking now passes more quietly. You respond instead of react. You pause instead of spiral. And without realizing it, you are no longer the same person who used to be consumed by what felt overwhelming before. What makes this kind of change difficult to recognize is that it does not announce itself. There is no clear beginning, no visible milestone, no moment where everything suddenly feels different. Because of that, you might even question whether you are growing at all. You might think you are stuck simply because nothing dramatic is happening.</p>
+<p style="margin-top:25px; line-height:2;">But growth is not always dramatic. Sometimes it is subtle enough to be mistaken for stillness. There are days when progress looks like choosing not to engage in things that drain you. Other days, it looks like letting go of thoughts you used to hold onto tightly. And sometimes, it simply looks like surviving something that once would have broken your peace for days, but now only passes through briefly before fading.</p>
+<p style="margin-top:25px; line-height:2;">Over time, you begin to understand that healing is not about erasing who you were. It is about learning how to exist differently with what once affected you deeply. The same memories may still exist, the same experiences may still be part of your story, but they no longer carry the same weight. And that is where quiet transformation lives—not in becoming someone unrecognizable, but in becoming someone more aware of what deserves space in your life and what does not. Eventually, you stop waiting for a moment that confirms you have changed. Because you realize the truth: you were already changing long before you noticed it. </p>
+<div style="text-align:center; margin-top:30px;">
+<button onclick="goBackToReflection()" class="backbutton" style="background:darkgoldenrod;"> Back</button>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<p>Voices Unfiltered | From Experience To Understanding</p>
+<p>© 2026 All Rights Reserved</p>
+</footer>
+
+<script>
+
+function show(page){
+let sections=document.getElementsByTagName("section");
+for(let i=0;i<sections.length;i++){
+sections[i].style.display="none";
+}
+document.getElementById(page).style.display="block";
+window.scrollTo(0,0);
+}
+
+function showLesson(page){
+let sections=document.getElementsByTagName("section");
+for(let i=0;i<sections.length;i++){
+sections[i].style.display="none";
+}
+document.getElementById(page).style.display="block";
+window.scrollTo(0,0);
+}
+
+function show(page){
+let sections=document.getElementsByTagName("section");
+
+for(let i=0;i<sections.length;i++){
+sections[i].style.display="none";
+}
+
+document.getElementById(page).style.display="block";
+window.scrollTo(0,0);
+}
+
+function showLesson(page){
+let sections=document.getElementsByTagName("section");
+
+for(let i=0;i<sections.length;i++){
+sections[i].style.display="none";
+}
+
+document.getElementById(page).style.display="block";
+window.scrollTo(0,0);
+}
+
+/* BACK TO REFLECTION WITHOUT GOING TO TOP */
+function goBackToReflection(){
+
+let sections=document.getElementsByTagName("section");
+
+for(let i=0;i<sections.length;i++){
+sections[i].style.display="none";
+}
+
+document.getElementById("reflection").style.display="block";
+
+}
+
+</script>
+
+</body>
+</html>
